@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('/fonts/Red_Hat_Display/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('/fonts/Red_Hat_Display/RedHatDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fjalla One';
+  src: url('/fonts/Fjalla_One/FjallaOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('/fonts/Exo_2/Exo2-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Exo 2';
+  src: url('/fonts/Exo_2/Exo2-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo Narrow';
+  src: url('/fonts/Archivo_Narrow/ArchivoNarrow-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo Narrow';
+  src: url('/fonts/Archivo_Narrow/ArchivoNarrow-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Abel';
+  src: url('/fonts/Abel/Abel-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

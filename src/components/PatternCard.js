@@ -50,12 +50,12 @@ const PatternCard = ({ pattern, onPreview, onGetCode, onApplyPattern, index }) =
   };
 
   const cardStyle = {
-    animationDelay: `${index * 0.1}s`
+    animationDelay: `${index * 0.05}s`
   };
 
   return (
     <div
-      className="pattern-card w-full mx-auto rounded-xl sm:rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] flex flex-col shadow-sm hover:shadow-lg overflow-hidden group"
+      className="pattern-card w-full mx-auto rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-[1.02] flex flex-col shadow-sm hover:shadow-lg overflow-hidden group opacity-0 animate-fadeIn"
       style={cardStyle}
     >
       {/* Pattern Display Area */}

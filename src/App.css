@@ -402,28 +402,26 @@ body {
   backdrop-filter: blur(20px);
   border-radius: 16px;
   overflow: hidden;
-
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   position: relative;
   min-height: 300px;
-  transform: translateY(0);
-  animation: cardSlideIn 0.6s ease-out;
 }
 
-@keyframes cardSlideIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-.pattern-card:hover {
-  transform: translateY(-6px) scale(1.01);
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
 
+.pattern-card:hover {
+  transform: scale(1.02);
   background: transparent;
 }
 
@@ -437,10 +435,10 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2),
     transparent
   );
-  transition: left 0.8s ease;
+  transition: left 0.6s ease;
   z-index: 1;
   pointer-events: none;
 }

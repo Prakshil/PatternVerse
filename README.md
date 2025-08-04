@@ -1,12 +1,13 @@
 # 🎨 PatternVerse
+**Stunning Backgrounds for your next big thing!**
 
 <div align="center">
 
 ![PatternVerse Hero](./images/first.png)
 
-**The Ultimate CSS Pattern Background Generator**
+**The Ultimate CSS Pattern Background Library**
 
-*Create, explore, and implement stunning CSS patterns with ease*
+*Create, explore, and implement stunning CSS patterns with ease.*
 
 [![GitHub Stars](https://img.shields.io/github/stars/Prakshil/PatternVerse?style=for-the-badge&logo=github&color=violet)](https://github.com/Prakshil/PatternVerse)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://your-demo-link.com)

@@ -162,42 +162,6 @@ body {
   color: #cbd5e1;
 }
 
-.pattern-applied.dark-theme .category-tab {
-  color: #cbd5e1;
-}
-
-.pattern-applied.dark-theme .category-tab:hover {
-  color: #f8fafc;
-}
-
-.pattern-applied.dark-theme .category-tab.active {
-  color: #c7d2fe;
-}
-
-.pattern-applied.dark-theme .pattern-card {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.pattern-applied.dark-theme .pattern-card:hover {
-  background: rgba(0, 0, 0, 0.6);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.pattern-applied.dark-theme .pattern-info {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.pattern-applied.dark-theme .pattern-name {
-  color: #f8fafc;
-}
-
-.pattern-applied.dark-theme .pattern-card:hover .pattern-name {
-  color: #c7d2fe;
-}
-
 .hero-title {
   font-size: 3.5rem;
   font-family: 'Fjalla One', 'Red Hat Display', sans-serif;
@@ -960,4 +924,303 @@ html {
 
 .pattern-card:hover::after {
   opacity: 1;
+}
+
+/* Contribute Button */
+.contribute-button-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* PatternVerse Logo - Top Left */
+.patternverse-logo {
+  font-family: 'Red Hat Display', sans-serif;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  cursor: default;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.patternverse-logo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.patternverse-logo .verse-accent {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Theme adaptations for PatternVerse Logo */
+.pattern-applied.dark-theme .patternverse-logo {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  color: #f3f4f6;
+}
+
+.pattern-applied.light-theme .patternverse-logo {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1f2937;
+}
+
+.contribute-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.contribute-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #5b21b6, #7c3aed);
+  text-decoration: none;
+  color: white;
+}
+
+.contribute-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer */
+.footer {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(229, 231, 235, 0.5);
+  padding: 40px 20px 20px;
+  margin-top: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-email {
+  margin: 0;
+  color: #374151;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-label {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.footer-email-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-email-link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand-text {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.footer-brand-text .verse-accent {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Theme adaptations for Contribute Button */
+.pattern-applied.dark-theme .contribute-button {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  color: #f8fafc;
+}
+
+.pattern-applied.dark-theme .contribute-button:hover {
+  background: linear-gradient(135deg, rgba(91, 33, 182, 0.95), rgba(124, 58, 237, 0.95));
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  color: #f8fafc;
+}
+
+.pattern-applied.light-theme .contribute-button {
+  background: linear-gradient(135deg, #1e293b, #374151);
+  color: white;
+  box-shadow: 0 4px 15px rgba(30, 41, 59, 0.3);
+}
+
+.pattern-applied.light-theme .contribute-button:hover {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  box-shadow: 0 6px 20px rgba(30, 41, 59, 0.4);
+  color: white;
+}
+
+/* Theme adaptations for Footer */
+.pattern-applied.dark-theme .footer {
+  background: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(55, 65, 81, 0.5);
+}
+
+.pattern-applied.dark-theme .footer-email {
+  color: #d1d5db;
+}
+
+.pattern-applied.dark-theme .footer-label {
+  color: #f3f4f6;
+}
+
+.pattern-applied.dark-theme .footer-email-link {
+  color: #a5b4fc;
+}
+
+.pattern-applied.dark-theme .footer-email-link:hover {
+  color: #c7d2fe;
+}
+
+.pattern-applied.dark-theme .footer-copyright {
+  color: #9ca3af;
+}
+
+.pattern-applied.dark-theme .footer-brand-text {
+  color: #f3f4f6;
+}
+
+.pattern-applied.light-theme .footer {
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pattern-applied.light-theme .footer-email {
+  color: #374151;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+}
+
+.pattern-applied.light-theme .footer-label {
+  color: #1f2937;
+}
+
+.pattern-applied.light-theme .footer-email-link {
+  color: #1e40af;
+}
+
+.pattern-applied.light-theme .footer-email-link:hover {
+  color: #1d4ed8;
+}
+
+.pattern-applied.light-theme .footer-copyright {
+  color: #4b5563;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.pattern-applied.light-theme .footer-brand-text {
+  color: #1f2937;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contribute-button-container {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .contribute-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .contribute-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .patternverse-logo {
+    padding: 6px 12px;
+    border-radius: 10px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .footer-brand {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .contribute-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .patternverse-logo {
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+  
+  .footer {
+    padding: 30px 15px 15px;
+  }
+  
+  .footer-brand-text {
+    font-size: 16px;
+  }
 }

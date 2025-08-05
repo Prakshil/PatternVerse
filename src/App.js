@@ -4,55 +4,11 @@ import PatternModal from './components/PatternModal';
 import { patterns as localPatterns } from './data/patterns';
 import './App.css';
 
-
-function parsePublicPattern(raw) {
-  // Try to extract the exported array from the TS file string
-  try {
-    // Remove import/export lines, get the array literal
-    const arrMatch = raw.match(/export const [a-zA-Z0-9_]+\s*[:=][^\[]*(\[[\s\S]*?\]);/);
-    if (!arrMatch) return [];
-    // eslint-disable-next-line no-eval
-    return eval(arrMatch[1]);
-  } catch (e) {
-    return [];
-  }
-}
-
-function patternFromPublic(p) {
-  // Convert public pattern object to local format
-  return {
-    id: p.id,
-    name: p.name,
-    badge: p.badge,
-    category: p.category,
-    css: p.style?.backgroundImage?.trim() || p.style?.background || '',
-    backgroundSize: p.style?.backgroundSize,
-    code: p.code,
-    description: p.description,
-  };
-}
-
 function App() {
   const [selectedPattern, setSelectedPattern] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [allPatterns, setAllPatterns] = useState(localPatterns);
   const [appliedPattern, setAppliedPattern] = useState(localPatterns.find(p => p.id === 'azure-depths') || localPatterns[0]);
-  // Fetch patterns from public/patterns.ts and merge
-  useEffect(() => {
-    fetch(process.env.PUBLIC_URL + '/patterns.ts')
-      .then(res => res.text())
-      .then(raw => {
-        const arr = parsePublicPattern(raw);
-        if (Array.isArray(arr)) {
-          const converted = arr.map(patternFromPublic);
-          // Merge, avoid duplicates by id
-          const ids = new Set(localPatterns.map(p => p.id));
-          const merged = [...localPatterns, ...converted.filter(p => !ids.has(p.id))];
-          setAllPatterns(merged);
-        }
-      })
-      .catch(() => {});
-  }, []);
 
   const handlePreview = (pattern) => {
     setSelectedPattern(pattern);
@@ -66,11 +22,83 @@ function App() {
 
   const handleApplyPattern = (pattern) => {
     setAppliedPattern(pattern);
+    // Smooth scroll to top when pattern is applied
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedPattern(null);
+  };
+
+  // Function to detect if a pattern is light themed (white/light backgrounds)
+  // This determines whether to use dark text (on light patterns) or light text (on dark patterns)
+  const isLightPattern = (pattern) => {
+    if (!pattern) return false;
+    const css = pattern.css.toLowerCase();
+    const backgroundColor = pattern.backgroundColor?.toLowerCase() || '';
+
+    // Check for light/white colors in the pattern
+    const lightPatterns = [
+      '#ffffff', '#fff', 'white', '#f8fafc', '#f1f5f9', '#e2e8f0', '#cbd5e1',
+      '#fff8f0', '#fff9f5', '#fefefe', '#f9f9f9', '#f5f5f5', '#eeeeee',
+      'rgb(255,255,255)', 'rgb(248,250,252)', 'rgb(241,245,249)',
+      'rgba(255,255,255', 'rgba(248,250,252', 'rgba(241,245,249'
+    ];
+    const darkPatterns = [
+      '#000000', '#111', '#222', '#1e293b', '#0f172a', '#18181b', '#020617',
+      'black', 'rgb(0,0,0)', 'rgba(0,0,0', '#2d2d2d', '#23272f', '#22223b', '#181825',
+      '#22223b', '#232946', '#23272f', '#232b2b', '#232b2b', '#23272f', '#232946', '#232b2b',
+      '#23272f', '#232946', '#232b2b', '#23272f', '#232946', '#232b2b', '#23272f', '#232946', '#232b2b'
+    ];
+
+    // Check if pattern contains light or dark colors
+    const containsLightColors = lightPatterns.some(color => css.includes(color) || backgroundColor.includes(color));
+    const containsDarkColors = darkPatterns.some(color => css.includes(color) || backgroundColor.includes(color));
+
+    // Check for light/dark pattern names
+    const lightNames = ['white', 'light', 'bright', 'paper', 'snow', 'cream', 'pearl'];
+    const darkNames = ['dark', 'night', 'black', 'midnight', 'charcoal', 'slate', 'onyx'];
+    const hasLightName = lightNames.some(name => pattern.name.toLowerCase().includes(name));
+    const hasDarkName = darkNames.some(name => pattern.name.toLowerCase().includes(name));
+
+    // Check if background color is specified and light/dark
+    const hasLightBackground = backgroundColor && (
+      backgroundColor.includes('#fff') || 
+      backgroundColor.includes('white') ||
+      backgroundColor.includes('#f')
+    );
+    const hasDarkBackground = backgroundColor && (
+      backgroundColor.includes('#000') ||
+      backgroundColor.includes('black') ||
+      backgroundColor.includes('#1e293b') ||
+      backgroundColor.includes('#18181b')
+    );
+
+    // Special handling for grid/dot backgrounds
+    if ((css.includes('linear-gradient') && css.includes('1px')) || (css.includes('radial-gradient') && css.includes('1px'))) {
+      // If the pattern has a backgroundColor, use that
+      if (backgroundColor) {
+        if (containsLightColors || hasLightBackground) return true;
+        if (containsDarkColors || hasDarkBackground) return false;
+      }
+      // If no backgroundColor, try to guess from the CSS (look for dark grid color)
+      // If the grid/dot color is dark (e.g. #222, #000, black), treat as dark
+      if (css.match(/(black|#000|#18181b|#1e293b|#23272f|#232946|#232b2b|#2d2d2d)/)) {
+        return false; // dark theme
+      }
+      // Otherwise, default to light
+      return true;
+    }
+
+    // General fallback
+    if (containsLightColors || hasLightName || hasLightBackground) return true;
+    if (containsDarkColors || hasDarkName || hasDarkBackground) return false;
+    // Default to dark theme if unsure
+    return false;
   };
 
   // Effect to handle body background when pattern is applied
@@ -109,38 +137,34 @@ function App() {
 
     // Handle different pattern types
     if (appliedPattern.css.includes('linear-gradient') && appliedPattern.css.includes('1px')) {
-      // Handle grid patterns (they use backgroundImage)
+      // Handle grid patterns
       style.backgroundImage = appliedPattern.css;
       if (!appliedPattern.backgroundColor) {
-        style.backgroundColor = '#ffffff'; // White background for grid patterns
+        // Try to detect if grid is dark or light
+        if (appliedPattern.css.match(/(black|#000|#18181b|#1e293b|#23272f|#232946|#232b2b|#2d2d2d)/)) {
+          style.backgroundColor = '#18181b'; // dark fallback
+        } else {
+          style.backgroundColor = '#ffffff'; // light fallback
+        }
       }
     } else if (appliedPattern.css.includes('radial-gradient') && appliedPattern.css.includes('1px')) {
       // Handle dot grid patterns
       style.backgroundImage = appliedPattern.css;
       if (!appliedPattern.backgroundColor) {
-        style.backgroundColor = '#ffffff'; // White background for dot patterns
+        if (appliedPattern.css.match(/(black|#000|#18181b|#1e293b|#23272f|#232946|#232b2b|#2d2d2d)/)) {
+          style.backgroundColor = '#18181b';
+        } else {
+          style.backgroundColor = '#ffffff';
+        }
       }
     } else if (appliedPattern.css.includes('linear-gradient') || appliedPattern.css.includes('radial-gradient')) {
-      // Handle normal gradients - check if it's a complex multi-gradient pattern
+      // Handle gradients
       if (appliedPattern.css.includes(',') && appliedPattern.css.split('gradient').length > 2) {
-        // Multiple gradients - use backgroundImage
         style.backgroundImage = appliedPattern.css;
       } else {
-        // Single gradient - use background
         style.background = appliedPattern.css;
       }
-    } else if (appliedPattern.css.includes('url(') || appliedPattern.css.includes('data:image')) {
-      // Handle SVG patterns and images
-      style.backgroundImage = appliedPattern.css;
-      style.backgroundRepeat = 'repeat';
-    } else if (appliedPattern.css.includes('repeating-linear-gradient') || appliedPattern.css.includes('repeating-radial-gradient')) {
-      // Handle repeating gradients (stripes, etc.)
-      style.backgroundImage = appliedPattern.css;
-    } else if (appliedPattern.css.includes('conic-gradient')) {
-      // Handle conic gradients
-      style.backgroundImage = appliedPattern.css;
     } else {
-      // Fallback for other patterns
       style.backgroundImage = appliedPattern.css;
     }
 
@@ -154,69 +178,18 @@ function App() {
     if (appliedPattern.backgroundRepeat) {
       style.backgroundRepeat = appliedPattern.backgroundRepeat;
     }
-    if (appliedPattern.filter) {
-      style.filter = appliedPattern.filter;
-    }
-    if (appliedPattern.opacity) {
-      style.opacity = appliedPattern.opacity;
-    }
-    if (appliedPattern.mixBlendMode) {
-      style.mixBlendMode = appliedPattern.mixBlendMode;
-    }
 
     return style;
   };
 
-  // Function to detect if a pattern is dark themed
-  const isDarkPattern = (pattern) => {
-    if (!pattern) return false;
-    
-    const css = pattern.css.toLowerCase();
-    
-    // Check for dark colors in the pattern
-    const darkPatterns = [
-      '#0f0f23', '#1a0b0b', '#1e3a8a', '#7f1d1d', // specific dark colors from our patterns
-      'rgb(15,15,35)', 'rgb(26,11,11)', 'rgb(30,58,138)', 'rgb(127,29,29)',
-      // General dark color detection
-      '#000', '#111', '#222', '#333', '#444',
-      'rgb(0,0,0)', 'rgb(17,17,17)', 'rgb(34,34,34)', 'rgb(51,51,51)', 'rgb(68,68,68)'
-    ];
-    
-    // Check if pattern contains dark colors
-    const containsDarkColors = darkPatterns.some(color => css.includes(color));
-    
-    // Check for dark pattern names
-    const darkNames = ['dark', 'crimson', 'depth', 'midnight', 'shadow', 'night'];
-    const hasDarkName = darkNames.some(name => pattern.name.toLowerCase().includes(name));
-    
-    return containsDarkColors || hasDarkName;
-  };
-
-  // Function to detect if a pattern is light themed (white/light backgrounds)
-  const isLightPattern = (pattern) => {
-    if (!pattern) return false;
-    
-    const css = pattern.css.toLowerCase();
-    
-    // Check for light/white colors in the pattern
-    const lightPatterns = [
-      '#ffffff', '#fff', 'white', '#f8fafc', '#f1f5f9', '#e2e8f0', '#cbd5e1',
-      '#fff8f0', '#fff9f5', '#fefefe', '#f9f9f9', '#f5f5f5',
-      'rgb(255,255,255)', 'rgb(248,250,252)', 'rgb(241,245,249)'
-    ];
-    
-    // Check if pattern contains light colors
-    const containsLightColors = lightPatterns.some(color => css.includes(color));
-    
-    // Check for light pattern names
-    const lightNames = ['white', 'light', 'bright', 'paper', 'snow'];
-    const hasLightName = lightNames.some(name => pattern.name.toLowerCase().includes(name));
-    
-    return containsLightColors || hasLightName;
+  // Determine theme class based on applied pattern
+  const getThemeClass = () => {
+    if (!appliedPattern) return '';
+    return isLightPattern(appliedPattern) ? 'light-theme' : 'dark-theme';
   };
 
   return (
-    <div className={`App ${appliedPattern ? 'pattern-applied' : ''} ${appliedPattern && isDarkPattern(appliedPattern) ? 'dark-theme' : ''} ${appliedPattern && isLightPattern(appliedPattern) ? 'light-theme' : ''}`}>
+    <div className={`App ${appliedPattern ? 'pattern-applied' : ''} ${getThemeClass()}`}>
       {/* Applied Pattern Background */}
       {appliedPattern && (
         <div 
@@ -254,11 +227,6 @@ function App() {
       {/* Hero Section */}
       <header className="hero px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="hero-content max-w-4xl mx-auto text-center">
-          <div className="hero-badge hidden sm:block mb-6">
-            <span className="badge-dot">●</span> 12+ New Patterns 
-            <span className="badge-arrow">Read More →</span>
-          </div>
-
           <h1 className="hero-title patternverse-logo-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
             Pattern <span className="verse-accent">Verse</span>
             <br/>
@@ -272,19 +240,19 @@ function App() {
             <div className="feature flex items-center justify-center sm:justify-start gap-3">
               <div>
                 <div className="feature-title text-sm sm:text-base md:text-lg font-semibold">One-Click Copy</div>
-                <div className="feature-desc text-xs sm:text-sm md:text-base opacity-75">Ready-to-use CSS code</div>
+                <div className="feature-desc text-xs sm:text-sm md:text-base opacity-90">Ready-to-use CSS code</div>
               </div>
             </div>
             <div className="feature flex items-center justify-center sm:justify-start gap-3">
               <div>
                 <div className="feature-title text-sm sm:text-base md:text-lg font-semibold">Live Preview</div>
-                <div className="feature-desc text-xs sm:text-sm md:text-base opacity-75">See patterns in action</div>
+                <div className="feature-desc text-xs sm:text-sm md:text-base opacity-90">See patterns in action</div>
               </div>
             </div>
             <div className="feature flex items-center justify-center sm:justify-start gap-3">
               <div>
                 <div className="feature-title text-sm sm:text-base md:text-lg font-semibold">Apply to Site</div>
-                <div className="feature-desc text-xs sm:text-sm md:text-base opacity-75">Test patterns live</div>
+                <div className="feature-desc text-xs sm:text-sm md:text-base opacity-90">Test patterns live</div>
               </div>
             </div>
           </div>
@@ -292,15 +260,15 @@ function App() {
           <div className="hero-stats flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 md:gap-12">
             <div className="stat text-center">
               <div className="stat-number text-2xl sm:text-3xl md:text-4xl font-bold">{allPatterns.length}</div>
-              <div className="stat-label text-sm sm:text-base md:text-lg opacity-75">Patterns</div>
+              <div className="stat-label text-sm sm:text-base md:text-lg opacity-90">Patterns</div>
             </div>
             <div className="stat text-center">
               <div className="stat-number text-2xl sm:text-3xl md:text-4xl font-bold">100%</div>
-              <div className="stat-label text-sm sm:text-base md:text-lg opacity-75">Free</div>
+              <div className="stat-label text-sm sm:text-base md:text-lg opacity-90">Free</div>
             </div>
             <div className="stat text-center">
               <div className="stat-number text-2xl sm:text-3xl md:text-4xl font-bold">CSS</div>
-              <div className="stat-label text-sm sm:text-base md:text-lg opacity-75">& Tailwind</div>
+              <div className="stat-label text-sm sm:text-base md:text-lg opacity-90">& Tailwind</div>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-﻿export const patterns = [
+export const patterns = [
   // === ORIGINAL PATTERNS (Fixed and Maintained) ===
   {
     id: "top-gradient-radial",
@@ -16,7 +16,6 @@
     id: "bottom-gradient-radial",
     name: "Bottom Gradient Radial",
     category: "gradients",
-    badge: "New",
     css: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #6366f1 100%)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(125% 125% at 50% 90%, #fff 40%, #6366f1 100%);"></div>
@@ -29,7 +28,6 @@
     id: "bottom-violet-radial",
     name: "Bottom Violet Radial",
     category: "gradients",
-    badge: "New",
     css: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #7c3aed 100%)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(125% 125% at 50% 90%, #fff 40%, #7c3aed 100%);"></div>
@@ -42,7 +40,6 @@
     id: "bottom-slate-radial",
     name: "Bottom Slate Radial",
     category: "gradients",
-    badge: "New",
     css: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #475569 100%)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(125% 125% at 50% 90%, #fff 40%, #475569 100%);"></div>
@@ -54,7 +51,6 @@
   {
     id: "radial-teal-glow",
     name: "Teal Glow",
-    badge: "New",
     category: "gradients",
     css: "radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #14b8a6 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -67,7 +63,6 @@
   {
     id: "radial-pink-glow",
     name: "Pink Glow",
-    badge: "New",
     category: "gradients",
     css: "radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #ec4899 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -80,7 +75,6 @@
   {
     id: "radial-amber-glow",
     name: "Amber Glow",
-    badge: "New",
     category: "gradients",
     css: "radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #f59e0b 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -93,7 +87,6 @@
   {
     id: "radial-emerald-glow",
     name: "Emerald Glow",
-    badge: "New",
     category: "gradients",
     css: "radial-gradient(125% 125% at 50% 90%, #ffffff 40%, #10b981 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -108,7 +101,6 @@
   {
     id: "dark-horizon-glow",
     name: "Dark Horizon Glow",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -121,7 +113,6 @@
   {
     id: "crimson-depth",
     name: "Crimson Depth",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #2b0707 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -134,7 +125,6 @@
   {
     id: "emerald-void",
     name: "Emerald Void",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #072607 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -147,7 +137,6 @@
   {
     id: "violet-abyss",
     name: "Violet Abyss",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #2b092b 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -160,7 +149,6 @@
   {
     id: "azure-depths",
     name: "Azure Depths",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -173,7 +161,6 @@
   {
     id: "orchid-depths",
     name: "Orchid Depths",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #350136 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -188,7 +175,6 @@
   {
     id: "dark-horizon-glow-top",
     name: "Dark Horizon Glow Top",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #0d1a36 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -201,7 +187,6 @@
   {
     id: "crimson-depth-top",
     name: "Crimson Depth Top",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #2b0707 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -214,7 +199,6 @@
   {
     id: "emerald-void-top",
     name: "Emerald Void Top",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #072607 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -227,7 +211,6 @@
   {
     id: "violet-abyss-top",
     name: "Violet Abyss Top",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #2b092b 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -240,7 +223,6 @@
   {
     id: "azure-depths-top",
     name: "Azure Depths Top",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #010133 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -253,7 +235,6 @@
   {
     id: "orchid-depths-top",
     name: "Orchid Depths Top",
-    badge: "New",
     category: "dark",
     css: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #350136 100%)",
     code: `<div class="min-h-screen w-full relative">
@@ -268,7 +249,6 @@
   {
     id: "purple-gradient-grid-right",
     name: "Purple Gradient Grid Right",
-    badge: "New",
     category: "geometric",
     css: "linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px), radial-gradient(circle 800px at 100% 200px, #d5c5ff, transparent)",
     backgroundSize: "96px 64px, 96px 64px, 100% 100%",
@@ -282,7 +262,6 @@
   {
     id: "purple-gradient-grid-left",
     name: "Purple Gradient Grid Left",
-    badge: "New",
     category: "geometric",
     css: "linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px), radial-gradient(circle 800px at 0% 200px, #d5c5ff, transparent)",
     backgroundSize: "96px 64px, 96px 64px, 100% 100%",
@@ -322,7 +301,6 @@
   {
     id: "dual-gradient-overlay-strong",
     name: "Dual Gradient Overlay",
-    badge: "New",
     category: "geometric",
     css: "linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px), linear-gradient(to bottom, rgba(229,231,235,0.8) 1px, transparent 1px), radial-gradient(circle 500px at 20% 80%, rgba(139,92,246,0.3), transparent), radial-gradient(circle 500px at 80% 20%, rgba(59,130,246,0.3), transparent)",
     backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
@@ -336,7 +314,6 @@
   {
     id: "dual-gradient-overlay-strong-swapped",
     name: "Dual Gradient Overlay Swapped",
-    badge: "New",
     category: "geometric",
     css: "linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px), linear-gradient(to bottom, rgba(229,231,235,0.8) 1px, transparent 1px), radial-gradient(circle 500px at 20% 20%, rgba(139,92,246,0.3), transparent), radial-gradient(circle 500px at 80% 80%, rgba(59,130,246,0.3), transparent)",
     backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
@@ -350,7 +327,6 @@
   {
     id: "dual-gradient-overlay-top",
     name: "Dual Gradient Overlay (Top)",
-    badge: "New",
     category: "geometric",
     css: "linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px), linear-gradient(to bottom, rgba(229,231,235,0.8) 1px, transparent 1px), radial-gradient(circle 500px at 0% 20%, rgba(139,92,246,0.3), transparent), radial-gradient(circle 500px at 100% 0%, rgba(59,130,246,0.3), transparent)",
     backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
@@ -364,7 +340,6 @@
   {
     id: "dual-gradient-overlay-bottom",
     name: "Dual Gradient Overlay (Bottom)",
-    badge: "New",
     category: "geometric",
     css: "linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px), linear-gradient(to bottom, rgba(229,231,235,0.8) 1px, transparent 1px), radial-gradient(circle 500px at 20% 100%, rgba(139,92,246,0.3), transparent), radial-gradient(circle 500px at 100% 80%, rgba(59,130,246,0.3), transparent)",
     backgroundSize: "48px 48px, 48px 48px, 100% 100%, 100% 100%",
@@ -406,7 +381,6 @@
   {
     id: "purple-radial-glow",
     name: "Purple Radial Glow",
-    badge: "New",
     category: "gradients",
     css: "radial-gradient(circle 500px at 50% 100px, rgba(139,92,246,0.4), transparent)",
     backgroundColor: "#020617",
@@ -420,7 +394,6 @@
   {
     id: "emerald-radial-glow",
     name: "Emerald Radial Glow",
-    badge: "New",
     category: "gradients",
     css: "radial-gradient(circle 500px at 50% 300px, rgba(16,185,129,0.35), transparent)",
     backgroundColor: "#020617",
@@ -437,7 +410,6 @@
     id: "dreamy-sky-pink-glow",
     name: "Dreamy Sky Pink Glow",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at 30% 70%, rgba(173, 216, 230, 0.35), transparent 60%), radial-gradient(circle at 70% 30%, rgba(255, 182, 193, 0.4), transparent 60%)",
     backgroundColor: "#fefcff",
     code: `<div class="min-h-screen w-full relative" style="background-color: #fefcff;">
@@ -451,7 +423,6 @@
     id: "beige-texture",
     name: "Warm Beige",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.5) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120,119,198,0.1) 0%, transparent 50%)",
     backgroundColor: "#f5f5dc",
     code: `<div class="min-h-screen w-full relative" style="background-color: #f5f5dc;">
@@ -521,7 +492,6 @@
     id: "soft-dark-yellow-glow",
     name: "Soft Dark Yellow Glow",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at center, #ccb755 0%, transparent 70%)",
     backgroundColor: "#ffffff",
     opacity: 0.6,
@@ -552,7 +522,6 @@
     id: "soft-green-glow",
     name: "Soft Green Glow",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at center, #8FFFB0, transparent)",
     backgroundColor: "#ffffff",
     code: `<div class="min-h-screen w-full bg-white relative">
@@ -565,7 +534,6 @@
   {
     id: "purple-glow-bg",
     name: "Purple Glow Right",
-    badge: "New",
     category: "effects",
     css: "radial-gradient(circle at top right, rgba(173, 109, 244, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
@@ -582,7 +550,6 @@
     id: "teal-glow-bg",
     name: "Teal Glow Right",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at top right, rgba(56, 193, 182, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
     filter: "blur(80px)",
@@ -598,7 +565,6 @@
     id: "warm-orange-glow-bg",
     name: "Warm Orange Glow Right",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at top right, rgba(255, 140, 60, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
     filter: "blur(80px)",
@@ -614,7 +580,6 @@
     id: "cool-blue-glow-bg",
     name: "Cool Blue Glow Right",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at top right, rgba(70, 130, 180, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
     filter: "blur(80px)",
@@ -630,7 +595,6 @@
     id: "purple-glow-bg-left",
     name: "Purple Glow Left",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at top left, rgba(173, 109, 244, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
     filter: "blur(80px)",
@@ -646,7 +610,6 @@
     id: "teal-glow-bg-left",
     name: "Teal Glow Left",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at top left, rgba(56, 193, 182, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
     filter: "blur(80px)",
@@ -662,7 +625,6 @@
     id: "warm-orange-glow-bg-left",
     name: "Warm Orange Glow Left",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at top left, rgba(255, 140, 60, 0.5), transparent 70%)",
     backgroundColor: "#ffffff",
     filter: "blur(80px)",
@@ -682,7 +644,6 @@
     id: "modern-mesh-gradient",
     name: "Modern Mesh Gradient",
     category: "gradients",
-    badge: "New",
     css: "radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%), radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%), radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);"></div>
@@ -695,7 +656,6 @@
     id: "cyberpunk-mesh",
     name: "Cyberpunk Mesh",
     category: "gradients",
-    badge: "New",
     css: "radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%), radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%), radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%), radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%), radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%), radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%)",
     code: `<div class="min-h-screen w-full bg-black relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 0%), radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%), radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%), radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%), radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%), radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);"></div>
@@ -708,7 +668,6 @@
     id: "aurora-gradient",
     name: "Aurora Gradient",
     category: "gradients",
-    badge: "New",
     css: "linear-gradient(45deg, #12c2e9, #c471ed, #f64f59)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);"></div>
@@ -721,7 +680,6 @@
     id: "sunset-mesh",
     name: "Sunset Mesh",
     category: "gradients",
-    badge: "New",
     css: "radial-gradient(at 83% 67%, hsl(0, 87%, 73%) 0px, transparent 50%), radial-gradient(at 67% 20%, hsla(357, 94%, 71%, 1) 0px, transparent 50%), radial-gradient(at 88% 35%, hsla(222, 81%, 65%, 1) 0px, transparent 50%), radial-gradient(at 31% 91%, hsla(9, 61%, 61%, 1) 0px, transparent 50%), radial-gradient(at 27% 71%, hsla(336, 91%, 65%, 1) 0px, transparent 50%), radial-gradient(at 74% 89%, hsla(30, 98%, 65%, 1) 0px, transparent 50%), radial-gradient(at 53% 75%, hsla(174, 94%, 68%, 1) 0px, transparent 50%)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(at 83% 67%, hsl(0, 87%, 73%) 0px, transparent 50%), radial-gradient(at 67% 20%, hsla(357, 94%, 71%, 1) 0px, transparent 50%), radial-gradient(at 88% 35%, hsla(222, 81%, 65%, 1) 0px, transparent 50%), radial-gradient(at 31% 91%, hsla(9, 61%, 61%, 1) 0px, transparent 50%), radial-gradient(at 27% 71%, hsla(336, 91%, 65%, 1) 0px, transparent 50%), radial-gradient(at 74% 89%, hsla(30, 98%, 65%, 1) 0px, transparent 50%), radial-gradient(at 53% 75%, hsla(174, 94%, 68%, 1) 0px, transparent 50%);"></div>
@@ -736,7 +694,6 @@
     id: "modern-grid-subtle",
     name: "Modern Grid Subtle",
     category: "geometric",
-    badge: "New",
     css: "linear-gradient(to right, rgba(156, 163, 175, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(156, 163, 175, 0.1) 1px, transparent 1px)",
     backgroundSize: "24px 24px",
     code: `<div class="min-h-screen w-full bg-white relative">
@@ -750,7 +707,6 @@
     id: "neon-grid-dark",
     name: "Neon Grid Dark",
     category: "geometric",
-    badge: "New",
     css: "linear-gradient(to right, rgba(34, 197, 94, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(34, 197, 94, 0.3) 1px, transparent 1px)",
     backgroundSize: "32px 32px",
     code: `<div class="min-h-screen w-full bg-gray-900 relative">
@@ -764,7 +720,6 @@
     id: "blueprint-grid",
     name: "Blueprint Grid",
     category: "geometric",
-    badge: "New",
     css: "linear-gradient(to right, rgba(59, 130, 246, 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.5) 1px, transparent 1px), linear-gradient(to right, rgba(59, 130, 246, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.2) 1px, transparent 1px)",
     backgroundSize: "100px 100px, 100px 100px, 20px 20px, 20px 20px",
     code: `<div class="min-h-screen w-full bg-blue-950 relative">
@@ -781,7 +736,6 @@
     id: "neon-glow-purple",
     name: "Neon Glow Purple",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3), transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3), transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2), transparent 50%)",
     code: `<div class="min-h-screen w-full bg-black relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3), transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3), transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2), transparent 50%);"></div>
@@ -794,7 +748,6 @@
     id: "electric-blue-glow",
     name: "Electric Blue Glow",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at 30% 70%, rgba(0, 191, 255, 0.4), transparent 60%), radial-gradient(circle at 70% 30%, rgba(30, 144, 255, 0.3), transparent 60%)",
     code: `<div class="min-h-screen w-full bg-gray-900 relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(circle at 30% 70%, rgba(0, 191, 255, 0.4), transparent 60%), radial-gradient(circle at 70% 30%, rgba(30, 144, 255, 0.3), transparent 60%);"></div>
@@ -807,7 +760,6 @@
     id: "matrix-glow",
     name: "Matrix Glow",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.2), transparent 50%), radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.15), transparent 50%)",
     code: `<div class="min-h-screen w-full bg-black relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.2), transparent 50%), radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.15), transparent 50%);"></div>
@@ -832,7 +784,6 @@
     id: "wave-pattern",
     name: "Wave Pattern",
     category: "effects",
-    badge: "New",
     css: "linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent), linear-gradient(90deg, #4f46e5, #7c3aed, #db2777, #dc2626)",
     code: `<div class="min-h-screen w-full relative">
   <div class="absolute inset-0 z-0" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent), linear-gradient(90deg, #4f46e5, #7c3aed, #db2777, #dc2626);"></div>
@@ -850,7 +801,6 @@
     id: "quantum-field",
     name: "Quantum Field",
     category: "effects",
-    badge: "New",
     css: "radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.4) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.4) 0%, transparent 50%)",
     code: `<div class="min-h-screen w-full bg-gray-900 relative">
   <div class="absolute inset-0 z-0" style="background: radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.4) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.4) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.4) 0%, transparent 50%);"></div>
@@ -870,7 +820,6 @@
     id: "dark-tech-grid",
     name: "Dark Tech Grid",
     category: "dark",
-    badge: "New",
     css: "linear-gradient(to right, rgba(30, 58, 138, 0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(30, 58, 138, 0.2) 1px, transparent 1px)",
     backgroundSize: "40px 40px",
     code: `<div class="min-h-screen w-full bg-gray-950 relative">
@@ -886,7 +835,6 @@
     id: "deep-space-aurora",
     name: "Deep Space Aurora",
     category: "dark",
-    badge: "New",
     css: "radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%), radial-gradient(circle at 85% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%), radial-gradient(circle at 50% 10%, rgba(16, 185, 129, 0.2) 0%, transparent 50%)",
     backgroundColor: "#020617",
     code: `<div class="min-h-screen w-full bg-slate-950 relative">
@@ -900,7 +848,6 @@
     id: "cosmic-dust-glow",
     name: "Cosmic Dust Glow",
     category: "dark",
-    badge: "New",
     css: "radial-gradient(circle at 70% 30%, rgba(236, 72, 153, 0.2) 0%, transparent 40%), radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.2) 0%, transparent 40%), radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 20%)",
     backgroundColor: "#000000",
     code: `<div class="min-h-screen w-full bg-black relative">
@@ -914,7 +861,6 @@
     id: "dark-nebula-mesh",
     name: "Dark Nebula Mesh",
     category: "dark",
-    badge: "New",
     css: "radial-gradient(at 20% 80%, hsla(270, 100%, 50%, 0.1) 0px, transparent 50%), radial-gradient(at 80% 20%, hsla(200, 100%, 50%, 0.1) 0px, transparent 50%), radial-gradient(at 50% 50%, hsla(300, 100%, 50%, 0.1) 0px, transparent 50%)",
     backgroundColor: "#0a0a0a",
     code: `<div class="min-h-screen w-full bg-neutral-950 relative">
@@ -928,7 +874,6 @@
     id: "abyssal-glow",
     name: "Abyssal Glow",
     category: "dark",
-    badge: "New",
     css: "radial-gradient(circle at 50% 100%, rgba(0, 0, 50, 0.8) 0%, transparent 70%), radial-gradient(circle at 50% 0%, rgba(0, 0, 20, 0.8) 0%, transparent 70%)",
     backgroundColor: "#000000",
     code: `<div class="min-h-screen w-full bg-black relative">
@@ -943,7 +888,6 @@
     id: "dark-aurora-borealis",
     name: "Dark Aurora Borealis",
     category: "dark",
-    badge: "New",
     css: "radial-gradient(circle at 20% 80%, rgba(0, 255, 127, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0, 191, 255, 0.3) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 50%)",
     backgroundColor: "#000000",
     code: `<div class="min-h-screen w-full bg-black relative">
@@ -958,7 +902,6 @@
     id: "dark-fluid-mesh",
     name: "Dark Fluid Mesh",
     category: "dark",
-    badge: "New",
     css: "radial-gradient(at 0% 0%, hsla(240, 100%, 20%, 0.3) 0px, transparent 50%), radial-gradient(at 100% 0%, hsla(280, 100%, 20%, 0.3) 0px, transparent 50%), radial-gradient(at 50% 100%, hsla(320, 100%, 20%, 0.3) 0px, transparent 50%)",
     backgroundColor: "#000000",
     code: `<div class="min-h-screen w-full bg-black relative">
